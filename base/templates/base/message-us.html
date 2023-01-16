@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{%block content%}
+<footer>
+</div>
+<section class="foothead">
+  <div>
+    <h1>CONTACT US</h1>
+  </div>
+</section>
+</section>
+<section class="message-us">
+
+  <div class="forms messageItem">
+    <form action="https://formsubmit.co/sh263175@gmail.com" method="POST">
+      <div class="form-item">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" class="darkblue input-control" required placeholder="Full name">
+      </div>
+      <div class="form-item">
+        <label for="email">Your email</label>
+        <input type="email" name="email" class="darkblue input-control" placeholder="Email Address">
+      </div>
+      <div class="form-item">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" class="darkblue input-control" required placeholder="Subject">
+      </div>
+      <div class="form-item">
+        <label for="messsage">Message</label>
+        <textarea rows="" cols="" name="message" class="darkblue input-control-m darkblue input-control"></textarea>
+      </div>
+      <div class="form-item">
+        <button type="submit" class="input-control-send">Send</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="maps messageItem">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.234824088294!2d121.33767831527588!3d14.063306193786417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5c8554956aaf%3A0x7b1213a951d955c!2sPLSP!5e0!3m2!1sen!2sph!4v1670116997019!5m2!1sen!2sph"
+      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+
+</footer>
+{% include "base/footer.html" %}
+{%endblock%}

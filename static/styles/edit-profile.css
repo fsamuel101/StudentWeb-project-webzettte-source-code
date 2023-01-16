@@ -1,0 +1,42 @@
+:root {
+    --lm-light-color: #fbfafe;
+    --lm-dark-color: #054a91;
+    --lm-accent-color: #f17300;
+    --ff-body: 'Roboto Slab', serif;
+    --ff-title: 'Roboto Condensed', sans-serif;
+    --ff-subtitle: 'Poppins', sans-serif;
+    --fs-body: 2em;
+    --fs-title: 3em;
+    --fs-subtitle-1: 1.25em;
+    --fs-subtitle-2: 2em;
+    --fs-subtitle-3: 1.5em;
+    --fs-subtitle-4: 1.1em;
+    --fs-very-small: 0.9em
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.overall-edit-profile{
+    width: 50%;
+    margin: auto;
+    background-color: var(--lm-light-color);
+    padding: 2em;
+}
+
+.form-label{
+    color: var(--lm-dark-color);
+}
+
+.textInput, .emailinput, .form-control, .input-group-text{
+    border: solid 1px var(--lm-accent-color);
+    border-radius: 3px;
+    color: var(--lm-dark-color);
+}
+
+.input-group-text{
+    color: var(--lm-dark-color);
+}

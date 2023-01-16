@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --lm-light-color: #fbfafe;
+  --lm-dark-color: #054a91;
+  --lm-accent-color: #f17300;
+  --ff-body: 'Roboto Slab', serif;
+  --ff-title: 'Roboto Condensed', sans-serif;
+  --ff-subtitle: 'Poppins', sans-serif;
+  --fs-body: 2em;
+  --fs-title: 3em;
+  --fs-subtitle-1: 1.25em;
+  --fs-subtitle-2: 2em;
+  --fs-subtitle-3: 1em;
+  --fs-subtitle-4: 1.1em;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+.ann-date, .ann-user{
+  margin-top: -0.5em;
+}
+
+
+.darkblue {
+  color: var(--lm-dark-color);
+}
+
+.title {
+  font-family: var(--ff-title);
+  font-size: var(--fs-title);
+}
+
+.subtitle-large {
+  font-family: var(--ff-subtitle);
+  font-size: var(--fs-subtitle-2);
+}
+
+.subtitle-small {
+  font-family: var(--ff-subtitle);
+  font-size: var(--fs-subtitle-4);
+}
+
+.body-paragraph {
+  font-size: var(--fs-subtitle3);
+  font-family: var(--ff-body);
+  letter-spacing: 0.5px;
+  word-spacing: 0.05em;
+}
+
+.ann-edited {
+  width: 100%;
+}
+
+.ann-overall-container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  flex-direction: column;
+}
+
+.announcement-body-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ann-preview-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10%;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+
+  background: rgba(4, 63, 145, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(4, 63, 145, 0.375);
+  padding: 5% 10% 10% 10%;
+
+
+}
+
+/* this is the most responsive shit in the whole world */
+.ann-preview-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  width: 90%;
+  margin: auto;
+
+}
+
+.ann-preview-container {
+  width: 30%;
+  margin: 1em;
+  height: 10%;
+  padding: 1%;
+  backdrop-filter: blur(25px) saturate(10%);
+  -webkit-backdrop-filter: blur(25px) saturate(10%);
+  background-color: rgba(255, 255, 255, 0.81);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.ann-description {
+  --max-lines: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
+
+.ann-content {
+  --max-lines: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+}
+
+.ann-image {
+  width: 100%;
+  height: 10em;
+  object-fit: cover;
+}
+
+.read-more-button {
+  display: flex;
+  padding: 0.25em;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 10px;
+  margin: auto;
+  background-color: var(--lm-accent-color);
+  color: var(--lm-light-color);
+}
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--lm-dark-color);
+  color: var(--lm-dark-color);
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 0.5em;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 30%;
+  margin: 1em auto;
+  left: 35%;
+}
+
+.button-57 a:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 a:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lm-dark-color);
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover a:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* this is where the full document belongs */
+.ann-main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5%;
+}
+
+.ann-main-items {
+  position: relative;
+  background-color: var(--lm-dark-color);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10em;
+  height: max-content;
+
+
+}
+
+.ann-main-image {
+  height: 100%;
+  max-width: 50%;
+  float: right;
+}
+
+.ann-main-container {
+  background-color: azure;
+  height: max-content;
+  padding: 10% 5%;
+}

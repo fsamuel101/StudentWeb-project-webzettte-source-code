@@ -1,0 +1,58 @@
+.terms-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.terms-container h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.terms-container h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.terms-body {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.terms-body h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.terms-body p {
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .terms-container {
+        width: 90%;
+    }
+
+    .terms-container h1 {
+        font-size: 2em;
+    }
+
+    .terms-container h3 {
+        font-size: 1em;
+    }
+
+    .terms-body {
+        font-size: 1em;
+    }
+
+    .terms-body h2 {
+        font-size: 1.2em;
+    }
+}

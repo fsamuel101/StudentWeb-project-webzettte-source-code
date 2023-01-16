@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content  %}
+<div class="developers-container">
+
+    <div class="forum-title-container developer-title-container">
+        <h1 class="darkblue title title-nav">STUDENT WEBZETTE</h1>
+        <h2 class="orange title-small">DEVELOPERS</h2>
+    </div>
+
+    <div class="developers">
+        {% for developer in developers %}
+        <div class="card developer-card">
+            <img class="card-img-top developer-photo photoo sheesh" src="{{ developer.picture.url }}" alt="developer">
+            <div class="card-body-dev">
+                <h1 class="card-text name-dev orange">{{ developer.name }}</h1>
+                <a class="card-text email" href="mailto:{{developer.email}}">{{developer.email}}</a>
+                <h2 class="card-text subtitle-4"> {{developer.role}} </h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include "base/footer.html" %}
+{%endblock%}

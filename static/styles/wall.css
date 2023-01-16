@@ -1,0 +1,196 @@
+:root {
+    --lm-light-color: #fbfafe;
+    --lm-dark-color: #054a91;
+    --lm-accent-color: #f17300;
+    --ff-body: 'Roboto Slab', serif;
+    --ff-title: 'Roboto Condensed', sans-serif;
+    --ff-subtitle: 'Poppins', sans-serif;
+}
+
+.bluee {
+    background: rgba(4, 63, 145, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(4, 63, 145, 0.375);
+}
+
+/* overall container */
+/* overall container */
+.wall-overall-container {
+    background-color: var(--lm-light-color);
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+/* header container */
+.wall-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: white;
+    color: var(--lm-dark-color);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* header title */
+.wall-header h1 {
+    font-family: var(--ff-title);
+    font-size: 2em;
+    color: var(--lm-dark-color);
+    text-align: center;
+}
+
+/* add post button */
+.wall-header button {
+    background-color: var(--lm-accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* messages container */
+.wall-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* individual message */
+.message {
+    width: 30%;
+    background-color: var(--lm-light-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-height: 13em;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* message body */
+.message p {
+    font-family: var(--ff-body);
+    font-size: 1em;
+    color: var(--lm-dark-color);
+    background-color: var(--lm-light-color);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* message author */
+.message small {
+    font-family: var(--ff-subtitle);
+    font-size: 0.8em;
+    color: var(--lm-dark-color);
+    text-align: right;
+}
+
+/* fasd */
+
+/* overall form container */
+.post-form {
+   
+    background-color: var(--lm-light-color);
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    position: relative; 
+    margin-top: 5em;
+}
+
+/* form inputs */
+.post-form input[type="text"],
+.post-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    font-family: var(--ff-body);
+    font-size: 1em;
+    color: var(--lm-dark-color);
+}
+
+
+
+/* submit button */
+.post-form input[type="submit"] {
+    width: 100%;
+    background-color: var(--lm-accent-color);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--ff-subtitle);
+    font-size: 1em;
+}
+
+/* media */
+.post-form .ck-editor__editable {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 200px;
+}
+
+@media(max-width: 600px) {
+    .wall-overall-container {
+        background-color: var(--lm-light-color);
+        padding: 20px;
+        border-radius: 5px;
+        width: 100%;
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 3em;
+    }
+
+    .wall-container {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
+
+    .message {
+        width: 90%;
+        background-color: var(--lm-light-color);
+        padding: 2px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        max-height: fit-content;
+    }
+
+    .wall-br {
+        border: solid 1px var(--lm-dark-color);
+        width: 90%;
+        z-index: 1000;
+        background-color: var(--lm-dark-color);
+    }
+
+    .post-form{
+        width: 90%;
+        margin-top: 3em;
+        align-self: center;
+    }
+
+}

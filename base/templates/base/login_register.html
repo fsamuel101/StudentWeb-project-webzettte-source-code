@@ -1,0 +1,56 @@
+ {% extends 'login.html' %}
+
+
+ {% block content%}
+
+ <section class="breakdown">
+
+
+     <div class="login-overall-container">
+
+
+         <div class="login-container">
+
+             <div class="messages-popup {% if messages %}show{% endif %}">
+                 <div class="error">
+                     {% if messages %}
+                     <ul>
+                         {% for message in messages %}
+                         <li style="list-style: none;">{{ message }}</li>
+                         {% endfor %}
+                     </ul>
+                     {% endif %}
+                 </div>
+             </div>
+
+             <div class="login-body">
+                 <div class="form-container">
+                     <form class="form" method="POST" action="">
+                         {% csrf_token %}
+                         <div class="form-group">
+                             <label class="form-label" for="username">Email</label>
+                             <input class="form-input" type="text" name="username" placeholder="Enter your Email"
+                                 required>
+                         </div>
+                         <div class="form-group">
+                             <label class="form-label" for="password">Password</label>
+                             <input class="form-input" type="password" name="password" placeholder="Enter your Password"
+                                 required>
+                         </div>
+                         <div class="form-group">
+                             <button class="form-button">Login</button>
+                         </div>
+                     </form>
+                     <div class="form-footer">
+                         <p class="form-footer-text">Haven't sign up yet?</p>
+                         <a class="form-footer-link" href="{% url 'register' %}">Sign up here</a>
+                         <a class="darkblue" href="{% url 'home' %}">Back to Homepage</a>
+                     </div>
+                 </div>
+             </div>
+             
+     </div>
+     </div>
+
+ </section>
+ {% endblock %}

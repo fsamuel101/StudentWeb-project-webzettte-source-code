@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --lm-light-color: #fbfafe;
+    --lm-dark-color: #054a91;
+    --lm-accent-color: #f17300;
+    --ff-body: 'Roboto Slab', serif;
+    --ff-title: 'Roboto Condensed', sans-serif;
+    --ff-subtitle: 'Poppins', sans-serif;
+    --fs-body: 2em;
+    --fs-title: 3em;
+    --fs-subtitle-1: 1.25em;
+    --fs-subtitle-2: 2em;
+    --fs-subtitle-3: 1.5em;
+    --fs-subtitle-4: 1.1em;
+    --fs-very-small: 0.9em
+}
+
+* {
+    box-sizing: border-box;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+.bold{
+    font-weight: 800;
+}
+
+.darkblue {
+    color: var(--lm-dark-color);
+}
+
+.white {
+    color: var(--lm-light-color);
+}
+
+.orange {
+    color: var(--lm-accent-color);
+}
+
+.title {
+    font-family: var(--ff-title);
+    font-size: var(--fs-title);
+}
+
+.title-small{
+    font-family: var(--ff-title);
+    font-size: var(--fs-subtitle-3);
+}
+.subtitle-very-small{
+    font-family: var(--ff-title);
+    font-size: var(--fs-very-small);
+}
+
+.subtitle-large {
+    font-family: var(--ff-subtitle);
+    font-size: var(--fs-subtitle-2);
+}
+
+.subtitle-small {
+    font-family: var(--ff-subtitle);
+    font-size: var(--fs-subtitle-4);
+}
+
+.body-paragraph {
+    font-size: var(--fs-subtitle3);
+    font-family: var(--ff-body);
+    letter-spacing: 0.5px;
+    word-spacing: 0.05em;
+}
+
+.admission-overall-container {
+    position: relative;
+}
+
+.admission-title-container {
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(19px);
+    backdrop-filter: blur(19px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 1% 0 1% 10%;
+}
+
+.admission-content-container {
+    background: rgba(4, 63, 145, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(4, 63, 145, 0.375);
+    padding:  1% 10% 1% 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-pad{
+    padding: 1% 0 0 5%;
+}
+
+.add-item{
+    margin-top: 2em;
+}

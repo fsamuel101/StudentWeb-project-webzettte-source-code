@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/34b3c14435.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/COE_logo.png' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&family=Roboto+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/forum.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/forum-navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/room.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/admissions.css' %}">
+    <title>Student Webzette</title>
+</head>
+
+<body>
+    <div class="preload">
+        <div class="spinner"></div>
+    </div>
+
+
+
+    <div class="body-shet">
+        {%block content%}
+
+        {%endblock%}
+    </div>
+
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const preload = document.querySelector('.preload');
+            preload.classList.add('preload-finish')
+        });
+
+        const hamburger = document.querySelector(".hamburger");
+        const navSideBar = document.querySelector(".forum-sidebar-left");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navSideBar.classList.toggle("active");
+            console.log("ejll")
+        })
+
+        document.querySelectorAll(".forumLinks").forEach(n =>
+            n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navSideBar.classList.remove("active");
+            }))
+    </script>
+
+
+</body>
+
+</html>
+
+
+<!-- if the user is logged in -->
+<!-- <h3 class="nav-link">{{request.user}}</h3>-->

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+{% load crispy_forms_tags %}    
+
+<div class="ann-overall-container">
+    <div class="ann-edited">
+        <div class="admission-title-container">
+            <h1 class="title darkblue">COLLEGE OF ENGINEERING</h1>
+            <h2 class="title-small orange">LATEST NEWS AND ANNOUNCEMENTS </h2>
+        </div> 
+
+        <div class="announcement-body-container bluee">
+            <section class="ann-main-section">
+                <div class="ann-main-items">
+                    {%for announce in announcement%}
+                    <div class="ann-main-container" id="{{announce.description}}">
+                        {%if announce.announcement_image %}
+                        <img src="{{ announce.announcement_image.url}}" class="ann-main-image" alt="announcement-image">
+                        {%endif%}
+                        <h1 class="ann-main-description title darkblue">{{announce.description}}</h1>
+                        <p class="ann-main-date subtitle-very-small">Posted on: {{announce.created}}</p>
+                        <p class="ann-main-user subtitle-small orange">Author: {{announce.user}}</p>
+                        <div class="ann-main-content">
+                            <hr>
+                            <p class="ann-main-body body-paragraph">{{announce.body|safe}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% include "base/footer.html" %}
+
+{%endblock%}

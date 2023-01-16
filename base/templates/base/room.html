@@ -1,0 +1,121 @@
+{% extends 'main.html'%}
+
+{%block content%}
+
+
+<div class="room-overall-container">
+
+
+    <div class="room-container">
+
+        <div class="forum-sidebar-left room-left room-first-row">
+            <div class="forum-search-box">
+                <div class="forum-search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <!-- just look at the vies why we name it q  -->
+                <form method="GET" action="{% url 'forum' %}" autocomplete="off">
+                    <input type="text" class="input-search" name="q" placeholder="Search Topics" />
+                </form>
+            </div>
+
+            <div class="forum-browse">
+                <h3>Browse <span class="orange">Topics</span> </h3>
+            </div>
+
+            <div class="forum-topic-contents">
+                <div class="all-topic">
+                    <a href="{% url 'forum' %}">All topics</a>
+                </div>
+                {% for topic in topics %}
+                <div class="forumLinks">
+                    {% comment %} space is very important in the line below, I've been thinking about life after two
+                    hours
+                    of finding what cause of the bug. {% endcomment %}
+                    <a href="{% url 'forum' %}?q={{topic.name}}">{{topic.name}}</a>
+                </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+        <div class="discussion-part">
+            <div class="discussions">
+
+
+                <div class="title-fixed">
+                    <h1 class="title-room darkblue">{{room.name}}</h1>
+                    <div>
+                        <img class="dp-big" src="{{room.host.avatar.url}}" alt="">
+                        <h5>{{room.host}}</h5>
+                    </div>
+                    <hr>
+
+                </div>
+
+                <div class="scroll-able">
+                    <div class="title description">
+                        <h6>Description</h6>
+                        <p class="orange description">{{room.description|safe}}</p>
+                    </div>
+
+
+
+
+                    <div class="comment-wrapper">
+
+                        {% for message in room_messages %}
+                        <div>
+                            <img src="{{message.user.avatar.url}}" alt="" width="40px" height="40px"
+                                style="border-radius: 50%;">
+                            <small><span>{{message.user}}</span> at{{message.created|timesince}} ago</small>
+                            <p class="forum-font message-margin">{{message.body}}</p>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+
+
+                {% if request.user.is_authenticated%}
+                <div class="sticky-message">
+                    <form method='POST' action="">
+                        {% csrf_token %}
+                        <div class="comment-form">
+                            <input class="yourmessage" type="text" name="body" id=""
+                                placeholder="Write your message here..." autocomplete="off">
+                            <button class="button-5 btn5" type="submit"><span class="text">Done?</span>
+                                <span>Click</span></button>
+                        </div>
+
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        
+        <div class="room-right">
+            <div class="participants-section">
+                <div class="title-fixed">
+                    <h1 class="title-room darkblue">Partcipants</h1>
+                     <hr>
+                </div>
+               
+
+                <div class="participants-lists">
+                    {% for user in participants %}
+                <div>
+                    <img class="img" src="{{user.avatar.url}}" alt="" height="50px" width="50px"
+                        style="border-radius: 50%;">
+                    <p>{{user.username}}</p>
+                </div>
+                {%endfor%}
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+{%endblock%}

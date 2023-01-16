@@ -1,0 +1,25 @@
+{% extends 'main.html'%}
+
+
+{%block content%}
+<div class="developers-container">
+    <div class="forum-title-container developer-title-container">
+        <h1 class="darkblue title title-nav">COLLEGE OF ENGINEERING</h1>
+        <h2 class="orange title-small">FACULTIES</h2>
+    </div>
+
+  <div class="developers">
+      {% for teacher in faculty %}
+      <div class="card developer-card">
+          <img class="card-img-top developer-photo photoo" src="{{ teacher.picture.url }}" alt="teacher">
+          <div class="card-body-dev">
+              <h1 class="card-text name-dev orange">{{ teacher.name }}</h1>
+              <h2 class="card-text subtitle-4 "> {{teacher.position}} </h2>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+{% include "base/footer.html" %}
+{% endblock content %} 

@@ -1,0 +1,144 @@
+{% extends 'main.html' %}
+
+{%block content%}
+
+<div class="all-forum">
+
+
+    <div class="forum-title-container">
+        <h1 class="darkblue title title-nav">COLLEGE OF ENGINEERING</h1>
+        <h2 class="orange title-small">STUDENT FORUM</h2>
+    </div>
+
+
+    <div class="overall-forum ">
+
+        <div class="forum-container">
+
+
+            <div class="forum-sidebar-left forum-sidebar-lefts room-first-row">
+                <div class="fixed-forum">
+                    <div class="forum-search-box">
+                        <div class="forum-search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <!-- just look at the vies why we name it q  -->
+                        <form method="GET" action="{% url 'forum' %}" autocomplete="off">
+                            <input type="text" class="input-search" name="q" placeholder="Search Topics" />
+                        </form>
+                    </div>
+
+                    <div class="forum-browse x">
+                        <h3>Browse <span class="orange">Topics</span> </h3>
+                    </div>
+
+                    <div class="forum-topic-contents">
+                        <div class="all-topic">
+                            <a href="{% url 'forum' %}">All topics</a>
+                        </div>
+                        {% for topic in topics %}
+                        <div class="forumLinks">
+                            {% comment %} space is very important in the line below, I've been thinking about life after
+                            two
+                            hours
+                            of finding what cause of the bug. {% endcomment %}
+                            <a href="{% url 'forum' %}?q={{topic.name}}">{{topic.name}}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="forum-sidebar-right">
+
+                <div class="forum-create">
+
+                    <div class="hamburger" id= "hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+
+
+                    <h4 class="title-room darkblue size">There are <span class="light">{{room_count}}</span>
+                        {%if room_count <= 1%}
+                        <span class="light">Discussion</span>
+                        {%else%}
+                        <span class="light">Discussions</span>
+                        {%endif%}
+                        Available
+                    </h4>
+
+
+
+                    <a href="{% url 'create-room' %}"><button class="button-5" role="button"><span
+                                class="text">Create</span>
+                            <span>Discussion</span></button></a>
+
+
+                </div>
+
+                <div class="forum-room-available">
+                    <!-- this is to get the rooms in room, basically the room in the database -->
+                    {% for room in rooms %}
+                    <div class="forum-rooms">
+                        <div class="forum-username">
+                            <!-- I dont know what is happening down there -->
+                            <img src="{{room.host.avatar.url}}" alt="" class="dp">
+                            <a href="{% url 'user-profile' room.host.id %}" class="room-host">{{room.host.username}} |
+                            </a>
+                            {% if request.user == room.host %}
+                            <a href="{% url 'update-room' room.id %}">Edit | </a>
+                            <a href="{% url 'delete-room' room.id %}">Delete</a>
+                            {% endif %}
+                        </div>
+                        <div class="forum-room-name">
+                            <a class="room-title forum-font" href="{%url 'room' room.id%}">
+                                {{room.name}}
+                            </a>
+
+                        </div>
+                        <div class="forum-room-topic">
+                            <a class="room-topic" href="#" aria-disabled="true">{{room.topic.name}}</a>
+
+                            <!-- I do not know what is happening, how am i able to get the topic name? -->
+                        </div>
+                        <hr>
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+
+
+
+            </div>
+
+            <div class="activeMember forum-sidebar-left left-white">
+                <div class="title-fixed">
+                    <h1 class="title-room darkblue">Students</h1>
+                    <hr>
+                </div>
+                <div class="active-students">
+                    {% for users in user %}
+                    <div class="active-students-lists">
+                        <img class="dp-big" src="{{users.avatar.url}}" alt="">
+                        <h2 class="forum-username darkblue"><a
+                                href="{% url 'user-profile' users.id %}">{{users.username}}</a></h2>
+                        <p>{{user.message.all.count}}</p>
+                    </div>
+
+                    {% endfor%}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+{% include "base/footer.html" %}
+{% endblock%}

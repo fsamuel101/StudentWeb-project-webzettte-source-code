@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --lm-light-color: #fbfafe;
+  --lm-dark-color: #054a91;
+  --lm-accent-color: #f17300;
+  --ff-body: 'Roboto Slab', serif;
+  --ff-title: 'Roboto Condensed', sans-serif;
+  --ff-subtitle: 'Poppins', sans-serif;
+  --fs-body: 2em;
+  --fs-title: 3em;
+  --fs-subtitle-1: 1.25em;
+  --fs-subtitle-2: 2em;
+  --fs-subtitle-3: 1em;
+  --fs-subtitle-4: 1.1em;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+.achieve{
+    background-color: var(--lm-light-color);
+}
+
+.achievement-body{
+    display: flex;
+    
+}
+
+
+.achievement-body img{
+    max-width: 50%;
+    
+}
+.achievements{
+    padding: 3em;
+}

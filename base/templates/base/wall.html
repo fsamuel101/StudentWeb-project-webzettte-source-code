@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+<div class="bluee">
+
+
+
+<div class="wall-overall-container">
+    <div class="wall-header">
+        <h1>Student Freedom Wall</h1>
+        <a href="{% url 'create-post' %}"><button class="button-5" role="button"><span
+            class="text">Add</span>
+        <span>Post</span></button></a>
+    </div>
+
+    <div class="wall-container">
+        {% for message in post %}
+        <div class="message">
+            <p>{{ message.body|safe}}</p>
+            <small>by: {{ message.name}}</small>
+            <hr class= "wall-br">
+        </div>
+    {% endfor %}
+    </div>
+</div>
+</div>
+{% include "base/footer.html" %}
+{%endblock%}

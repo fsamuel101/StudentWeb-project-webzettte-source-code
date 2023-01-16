@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="ann-overall-container">
+    <div class="ann-edited">
+        <div class="admission-title-container">
+            <h1 class="title darkblue">COLLEGE OF ENGINEERING</h1>
+            <h2 class="title-small orange">ACHIEVEMENTS</h2>
+        </div>
+
+        <div class="announcement-body-container">
+            <section class="ann-main-section">
+                <div class="ann-main-items">
+                    {% for achievement in achievement%}
+                    <div class="ann-main-container">
+                        {%if achievement.picture %}
+                        <img src="{{ achievement.picture.url}}" class="ann-main-image" alt="announcement-image">
+                        {%endif%}
+                        <h1 class="ann-main-description title darkblue">{{achievement.title}}</h1>
+                        <p class="ann-main-date subtitle-very-small">Posted on: {{achievement.created}}</p>
+                        <p class="ann-main-user subtitle-small orange">Author: {{achievement.user}}</p>
+                        <div class="ann-main-content">
+                            <hr>
+                            <p class="ann-main-body body-paragraph">{{achievement.description|safe}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% include 'base/footer.html' %}
+{% endblock content %}

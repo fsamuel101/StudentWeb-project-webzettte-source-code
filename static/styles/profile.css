@@ -1,0 +1,103 @@
+:root {
+    --lm-light-color: #fbfafe;
+    --lm-dark-color: #054a91;
+    --lm-accent-color: #f17300;
+    --ff-body: 'Roboto Slab', serif;
+    --ff-title: 'Roboto Condensed', sans-serif;
+    --ff-subtitle: 'Poppins', sans-serif;
+    --fs-body: 2em;
+    --fs-title: 3em;
+    --fs-subtitle-1: 1.25em;
+    --fs-subtitle-2: 2em;
+    --fs-subtitle-3: 1.5em; 
+    --fs-subtitle-4: 1.1em;
+    --fs-very-small: 0.9em
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.white{ 
+    color: var(--lm-light-color);
+}
+.dp-xl{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--lm-light-color);
+}
+
+.profile-view-overall-container{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: var(--lm-light-color);
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+
+.blue{
+    background: rgba(4, 63, 145, 0.65);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(4, 63, 145, 0.375);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.profile-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lm-light-color);
+    border-bottom: 3px solid var(--lm-accent-colors);
+    position: sticky;
+    top: 7em;
+    z-index: 99999999;
+}
+
+.profile-name{
+    color: var(--lm-accent-color);
+}
+
+.column-1{
+    background-color: var(--lm-light-color);
+    padding: 2em;
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.profile-discussion{
+    background-color: var(--lm-light-color);
+    overflow: hidden;
+}
+
+.text-profile{
+    font-family: var(--ff-subtitle);
+    font-size: var(--fs-subtitle-1);
+
+}
+
+.blue-forum{
+    background-color: var(--lm-light-color);
+    padding-right: 2em;
+}
+
+.discussion-profile h3{
+    font-family: var(--ff-subtitle);
+    font-size: var(--fs-subtitle-1);
+    color: var(--lm-dark-color);
+}
+
+
+
+@media(max-width: 600px) {
+    .column-1{
+        width: 97%;
+    }
+}

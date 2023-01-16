@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+{% block content  %}
+
+<div class="bluee">
+ 
+
+
+
+    <div class="column-1">
+        <div class="profile-header">
+            <img class="dp-xl" src="{{user.avatar.url}}" alt="Profile picture">
+            <h1 class="profile-name text-profile darkblue">
+                <span>{{user.first_name}}</span>
+                <span>{{user.last_name}}</span>
+            </h1>
+            <hr>
+            <h3 class="profile-name text-profile">{{user.bio}}</h3>
+            <hr class="hr-xl">
+        </div>
+
+        <div class="profile-discussion discussion-profile">
+
+            <h3>{{user.first_name}}'s Discussions</h3>
+            {% for room in room %}
+            <div class="forum-rooms blue-forum">
+                <div class="forum-username">
+                    <!-- I dont know what is happening down there -->
+                    <img src="{{room.host.avatar.url}}" alt="" class="dp">
+                    <a href="{% url 'user-profile' room.host.id %}" class="room-host orange">{{room.host.username}} |
+                    </a>
+                    {% if request.user == room.host %}
+                    <a class="darkblue" href="{% url 'update-room' room.id %}">Edit | </a>
+                    <a class="darkblue  " href="{% url 'delete-room' room.id %}">Delete</a>
+                    {% endif %}
+                </div>
+                <div class="forum-room-name">
+                    <a class="room-title forum-font orange" href="{%url 'room' room.id%}">
+                        {{room.name}}
+                    </a>
+
+                </div>
+                <div class="forum-room-topic">
+                    <a class="room-topic" href="#" aria-disabled="true">{{room.topic.name}}</a>
+
+                    <!-- I do not know what is happening, how am i able to get the topic name? -->
+                </div>
+                <hr>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock  %}
